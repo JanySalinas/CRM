@@ -1,0 +1,32 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "This is a backend CRM system that allows users to register customers, log activities, view reports of inactive customers, and receive automated email reminders. It uses Node.js, Express, Sequelize (MySQL), JWT authentication, and Nodemailer. There are two user roles: admin and seller.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanySalinas/CRM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JanySalinas/CRM/issues"
+  },
+  "homepage": "https://github.com/JanySalinas/CRM#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.0",
+    "node-cron": "^3.0.3",
+    "sequelize": "^6.37.7"
+  }
+}

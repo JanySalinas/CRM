@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini CRM Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div id="login-error" class="error"></div>
+    </div>
+
+    <!-- Dashboard Section (hidden until logged in) -->
+    <div id="dashboard-container" class="hidden">
+        <header>
+            <h1>Mini CRM Dashboard</h1>
+            <button id="logout-btn">Log Out</button>
+        </header>
+        <nav>
+            <button id="customers-btn">Customers</button>
+            <button id="activities-btn">Activities</button>
+            <button id="reports-btn">Inactive Customers Report</button>
+        </nav>
+        <section id="content"></section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
