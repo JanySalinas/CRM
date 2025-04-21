@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mini CRM Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-        <button id="logout-btn">Logout</button>
-    </header>
-
-    <nav>
-        <button id="add-customer-btn">Add Customer</button>
-        <button id="view-inactive-btn">Inactive Customers</button>
-    </nav>
-
-    <section>
-        <h2>Customers</h2>
-        <table id="customers-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Customer rows will be inserted here -->
-            </tbody>
-        </table>
-    </section>
-    
-    <script src="js/dashboard.js"></script>
+  <header>
+    <div class="header-container">
+      <h1>CRM Dashboard</h1>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+  </header>
+  
+  <nav class="dashboard-nav">
+    <button id="add-customer-btn" class="btn">Add Customer</button>
+    <button id="view-inactive-btn" class="btn">Inactive Customers</button>
+  </nav>
+  
+  <main class="dashboard-content">
+    <h2>Customers</h2>
+    <div class="table-responsive">
+      <table id="customers-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Customer rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  
+  <script src="js/dashboard.js"></script>
 </body>
 </html>

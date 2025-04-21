@@ -6,16 +6,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h2 id="form-title">Add Customer</h2>
-  <form id="customer-form">
-    <input type="text" id="name" placeholder="Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="text" id="phone" placeholder="Phone">
-    <input type="text" id="address" placeholder="Address">
-    <input type="date" id="lastContacted" placeholder="Last Contacted">
-    <button type="submit">Submit</button>
-  </form>
-  <div id="form-error" class="error"></div>
+  <div class="customer-form-container">
+    <h2 id="form-title">Add Customer</h2>
+    <form id="customer-form">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="phone" placeholder="Phone">
+      <input type="text" id="address" placeholder="Address">
+      <input type="date" id="lastContacted" placeholder="Last Contacted">
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <div id="form-error" class="error"></div>
+  </div>
   <script src="js/addEditCustomer.js"></script>
 </body>
 </html>

@@ -26,12 +26,12 @@ exports.getActivitiesByCustomerId = async (req, res) => {
 };
 
 exports.createActivity = async (req, res) => {
-    try {
-      // Set userId from the token data (assuming your verifyToken middleware attaches req.user)
-      req.body.userId = req.user.id;
-      const newActivity = await Activity.create(req.body);
-      res.json(newActivity);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  };
+  try {
+    // Set userId from the token data (assuming your verifyToken middleware attaches req.user)
+    req.body.userId = req.user.id;
+    const newActivity = await Activity.create(req.body);
+    res.json(newActivity);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

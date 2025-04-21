@@ -4,16 +4,104 @@
   <meta charset="UTF-8">
   <title>Customer Details</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Customer Details Page Specific Styling */
+    .customer-details-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .customer-details-container h2,
+    .customer-details-container h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1em;
+    }
+    
+    .customer-info-card {
+      background: #f7f7f7;
+      padding: 1.5em;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    #activities-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #activities-list li {
+      background: #f1f1f1;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    
+    #activities-list li:hover {
+      background: #e0e0e0;
+    }
+    
+    .action-buttons {
+      text-align: center;
+      margin-top: 1.5em;
+    }
+    
+    .action-buttons a,
+    .action-buttons button {
+      margin: 0.5em;
+      padding: 0.75em 1.5em;
+      border-radius: 5px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      min-width: 130px;
+      display: inline-block;
+    }
+    
+    .action-buttons a {
+      background: #00a3cc;
+      color: #fff;
+    }
+    
+    .action-buttons a:hover {
+      background: #0086a3;
+    }
+    
+    .action-buttons button {
+      background: #d9534f;
+      color: #fff;
+    }
+    
+    .action-buttons button:hover {
+      background: #c9302c;
+    }
+  </style>
 </head>
 <body>
-  <h2>Customer Details</h2>
-  <div id="customer-info">
-    <!-- Customer basic information will be rendered here -->
+  <div class="customer-details-container">
+    <h2>Customer Details</h2>
+    <div id="customer-info" class="customer-info-card">
+      <!-- Customer basic information will be rendered here -->
+    </div>
+    <h3>Activities</h3>
+    <ul id="activities-list">
+      <!-- List of customer activities will be rendered here -->
+    </ul>
+    <div class="action-buttons">
+      <a href="addEditCustomer.html?id=1" class="btn">Edit Customer</a>
+      <a href="addActivity.html?customerId=1" class="btn">Add Activity</a>
+      <button id="delete-customer-btn" class="btn">Delete Customer</button>
+    </div>
   </div>
-  <h3>Activities</h3>
-  <ul id="activities-list">
-    <!-- List of customer activities will be rendered here -->
-  </ul>
   <script src="js/customerDetails.js"></script>
 </body>
 </html>

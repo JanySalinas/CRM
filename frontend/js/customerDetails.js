@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return res.json();
     })
-    
+
     .then(data => {
         const activitiesList = document.getElementById('activities-list');
         activitiesList.innerHTML = '';
@@ -69,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
       activitiesList.innerHTML = `<li>${error.message}</li>`;
     });
   });
+  

@@ -73,7 +73,6 @@ exports.updateCustomer = async (req, res) => {
 // Controller for deleting a customer (admin only)
 exports.deleteCustomer = async (req, res) => {
     try {
-        // Only admin users can delete customers
         if (req.user.role !== 'admin') {
             return res.status(403).json({ message: 'Access denied' });
         }
@@ -82,8 +81,13 @@ exports.deleteCustomer = async (req, res) => {
         if (!customer) {
             return res.status(404).json({ message: 'Customer not found' });
         }
+
+        // Delete activities first
+        await Activity.destroy({ where: { customerId } });
+
+        // Then delete the customer
         await customer.destroy();
-        res.json({ message: 'Customer deleted successfully' });
+        res.json({ message: 'Customer and related activities deleted successfully' });
     } catch (err) {
         res.status(500).json({ message: 'Error deleting customer', error: err.message });
     }

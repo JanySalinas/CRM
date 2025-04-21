@@ -12,7 +12,7 @@ header {
     background-color: #0044cc;
     color: white;
     padding: 1em;
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
 }
@@ -34,3 +34,543 @@ input, button {
     padding: 0.5em;
     margin: 0.5em 0;
 }
+
+/* Existing global styles ... */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #0078d4, #00a9e0);
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+   margin: 0;
+   font-size: 2.5em;
+   letter-spacing: 1px;
+}
+
+/* Main content styling */
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+main p {
+   font-size: 1.2em;
+   /* line-height: 1.6; */
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+/* Button style for links */
+.btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 2em;
+    margin: 0.5em 0;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    min-width: 80px;  
+}
+
+.btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+}
+
+/* Noscript styling */
+noscript {
+    background-color: #ffdddd;
+    border: 1px solid #ff0000;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    main {
+       margin: 1em;
+       padding: 1em;
+    }
+    header h1 {
+       font-size: 2em;
+    }
+}
+
+/* Center the login form in a card-like container */
+.login-container {
+    max-width: 430px;
+    margin: 80px auto;
+    padding: 2em;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* Form header */
+  .login-container h2 {
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Adjust input fields so they’re centered and not full width */
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    width: 90%;           /* or any value that makes it narrower */
+    padding: 0.75em;
+    margin: 0.5em auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* text-align: center;  */
+  }
+  
+  /* Enhance the button style */
+  .login-container .btn {
+    width: 100%;
+    padding: 0.75em;
+    background-color: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-container .btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+  }
+  
+  /* Style the register link */
+  .login-container p {
+    margin-top: 1em;
+    font-size: 0.9em;
+  }
+  
+  .login-container a {
+    color: #0078d4;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .login-container a:hover {
+    text-decoration: underline;
+  }
+
+  /* Ensure buttons are modern, rounded, and responsive */
+.btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 2em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px;
+}
+
+.btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+}
+
+/* Optional: Improve table appearance */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 0.75em;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f7f7f7;
+}
+
+.content {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Dashboard Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+  }
+  
+  /* Improved Navigation styling */
+  .dashboard-nav {
+    background: #f8f8f8;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  /* Dashboard Main Content */
+  .dashboard-content {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* Responsive table container */
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1em;
+  }
+  
+  /* Modern Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  table thead {
+    background-color: #f1f1f1;
+  }
+  
+  table th, table td {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Modern Button Style (you can update if needed) */
+  .btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 2em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 100px;
+  }
+  
+  .btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+  }
+
+  .view-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 100px;
+}
+
+.view-btn:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+}   
+
+.edit-btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 100px;
+}
+
+.edit-btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+}
+
+.activity-btn {
+    display: inline-block;
+    background-color: #f0ad4e;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 100px;
+}
+
+.activity-btn:hover {
+    background-color: #ec971f;
+    transform: scale(1.02);
+}
+
+.delete-btn {
+    display: inline-block;
+    background-color: #d9534f;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 100px;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+    transform: scale(1.02);
+}
+
+/* Update the container holding the buttons */
+.action-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+/* Make each button smaller */
+.view-btn,
+.edit-btn,
+.activity-btn,
+.delete-btn {
+    padding: 0.5em 1em;
+    min-width: 40px;
+    font-size: 0.9em;
+}
+
+/* Modern Add/Edit Customer Form Styling */
+.customer-form-container {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.customer-form-container h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.customer-form-container label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+    font-weight: 500;
+}
+
+.customer-form-container input[type="text"],
+.customer-form-container input[type="email"],
+.customer-form-container input[type="tel"],
+.customer-form-container textarea {
+    width: 95%;
+    padding: 0.75em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.customer-form-container input[type="text"]:focus,
+.customer-form-container input[type="email"]:focus,
+.customer-form-container input[type="tel"]:focus,
+.customer-form-container textarea:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+.customer-form-container .btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 2em;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    margin: 0.5em 0;
+    cursor: pointer;
+}
+
+.customer-form-container .btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+}
+
+/* Modern Add Activity Form Styling */
+.activity-form-container {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activity-form-container h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.activity-form-container label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+    font-weight: 500;
+}
+
+.activity-form-container input[type="text"],
+.activity-form-container input[type="date"],
+.activity-form-container textarea {
+    width: 95%;
+    padding: 0.75em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.activity-form-container input[type="text"]:focus,
+.activity-form-container input[type="date"]:focus,
+.activity-form-container textarea:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+.activity-form-container .btn {
+    display: inline-block;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75em 2em;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    margin: 0.5em 0;
+    cursor: pointer;
+}
+
+.activity-form-container .btn:hover {
+    background-color: #005a9c;
+    transform: scale(1.02);
+}
+/* Inactive Customers Report Table Styling */
+#report-table {
+    width: 80%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#report-table thead th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+#report-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#report-table td {
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+#report-table tr:hover {
+    background-color: #e7f0ff;
+}
+
+/* Center the report heading */
+h2 {
+    text-align: center;
+}
+
+/* Center the table in the page */
+#report-table {
+    margin: 0 auto;
+}
+.centered-button {
+    display: block;
+    margin: 2em auto 0 auto; /* top, left/right, bottom auto */
+    text-align: center;
+  }

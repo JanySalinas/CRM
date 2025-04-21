@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
   
-    // Get the customerId from the URL query string
+    // Get the customerId from the URL query string (e.g., ?customerId=123)
     const params = new URLSearchParams(window.location.search);
     const customerId = params.get('customerId');
     if (!customerId) {
@@ -13,19 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
+  
     const form = document.getElementById('activity-form');
     const formError = document.getElementById('form-error');
   
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       formError.textContent = '';
-
-      // Retrieve form values
+  
       const type = document.getElementById('type').value;
       const note = document.getElementById('note').value;
       const date = document.getElementById('date').value;
   
-      // Create the data object with the note field
       const activityData = {
         customerId: parseInt(customerId),
         type: type,
