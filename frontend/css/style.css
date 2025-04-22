@@ -574,3 +574,43 @@ h2 {
     margin: 2em auto 0 auto; /* top, left/right, bottom auto */
     text-align: center;
   }
+
+  /* RESPONSIVE STYLING */
+@media (max-width: 600px) {
+    /* Overall content adjustments */
+    main, .dashboard-content, .customer-form-container, .activity-form-container {
+        margin: 1em;
+        padding: 1em;
+        width: 95%;
+    }
+    
+    /* Reduce font sizes for headings */
+    header h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    /* Adjust table styling */
+    table, #report-table {
+        width: 100%;
+    }
+    table th, table td {
+        padding: 0.5em;
+    }
+    
+    /* Make buttons stack vertically if needed */
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* For very small devices */
+@media (max-width: 400px) {
+    .btn {
+        padding: 0.5em 1em;
+        font-size: 0.85em;
+    }
+}

@@ -1,4 +1,6 @@
-const Customer = require('../models/costumer'); // Using the filename "costumer.js"
+const { Op } = require('sequelize');
+const Customer = require('../models/costumer'); 
+
 
 // Controller for listing customers:
 // - Admin: list all customers
@@ -51,27 +53,35 @@ exports.createCustomer = async (req, res) => {
 };
 
 // Controller for updating an existing customer
-exports.updateCustomer = async (req, res) => {
+exports.updateCustomer = async (req, res, next) => {
     try {
-        const customerId = req.params.id;
-        const customer = await Customer.findByPk(customerId);
+        // Validate input (example: name and email required)
+        const { name, email, phone, address, lastContacted } = req.body;
+        if (!name || !email) {
+            return res.status(400).json({ message: 'Name and Email are required' });
+        }
+        // Fetch customer based on id param
+        const customer = await Customer.findByPk(req.params.id);
         if (!customer) {
             return res.status(404).json({ message: 'Customer not found' });
         }
-        // Sellers can update only their own customers
+        // For sellers, ensure they can update only their own customers
         if (req.user.role === 'seller' && customer.userId !== req.user.id) {
             return res.status(403).json({ message: 'Access denied' });
         }
-        const { name, email, phone, address, lastContacted } = req.body;
+       
         await customer.update({ name, email, phone, address, lastContacted });
         res.json({ message: 'Customer updated successfully', customer });
     } catch (err) {
-        res.status(500).json({ message: 'Error updating customer', error: err.message });
+        next(err); // Forward to centralized error handler
     }
 };
 
-// Controller for deleting a customer (admin only)
-exports.deleteCustomer = async (req, res) => {
+/**
+ * Delete customer along with related activities.
+ * Accessible only to admins.
+ */
+exports.deleteCustomer = async (req, res, next) => {
     try {
         if (req.user.role !== 'admin') {
             return res.status(403).json({ message: 'Access denied' });
@@ -81,14 +91,31 @@ exports.deleteCustomer = async (req, res) => {
         if (!customer) {
             return res.status(404).json({ message: 'Customer not found' });
         }
-
-        // Delete activities first
+        // Delete related activities first
         await Activity.destroy({ where: { customerId } });
-
         // Then delete the customer
         await customer.destroy();
         res.json({ message: 'Customer and related activities deleted successfully' });
     } catch (err) {
-        res.status(500).json({ message: 'Error deleting customer', error: err.message });
+        next(err);
+    }
+};
+
+/**
+ * Get inactive customers based on lastContacted threshold.
+ */
+exports.getInactiveCustomers = async (req, res, next) => {
+    try {
+      // Set threshold, e.g., customers not contacted in the last 30 days.
+      const thresholdDate = new Date();
+      thresholdDate.setDate(thresholdDate.getDate() - 30);
+      
+      const inactiveCustomers = await Customer.findAll({
+        where: { lastContacted: { [Op.lt]: thresholdDate } }
+      });
+      
+      res.json({ inactiveCustomers });
+    } catch (error) {
+      next(error);
     }
 };

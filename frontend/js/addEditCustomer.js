@@ -54,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorDiv.textContent = '';
+
+      if (!document.getElementById('name').value.trim() || !document.getElementById('email').value.trim()) {
+        errorDiv.textContent = 'Name and Email are required.';
+        return;
+      }
   
       const customerData = {
         name: document.getElementById('name').value,

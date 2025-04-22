@@ -12,6 +12,8 @@ router.get('/:id', verifyToken, customerController.getCustomerById);
 // POST /api/customers: Create a new customer
 router.post('/', verifyToken, customerController.createCustomer);
 
+router.get('/inactiveCustomers', verifyToken, customerController.getInactiveCustomers);
+
 // PUT /api/customers/:id: Update customer
 router.put('/:id', verifyToken, customerController.updateCustomer);
 

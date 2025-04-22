@@ -4,12 +4,19 @@ const path = require('path');
 const app = express();
 const sequelize = require('./config/database');
 const cors = require('cors');
+const customerController = require('./controllers/customerController');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
 const customerRoutes = require('./routes/costumerRoutes');
 const activityRoutes = require('./routes/activityRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+
+//Global error
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Internal server error', error: err.message });
+});
 
 // Serve static files from the 'frontend' folder
 app.use(express.static(path.join(__dirname, 'frontend')));
@@ -34,6 +41,8 @@ app.get('/api/protected', verifyToken, (req, res) => {
 app.get('/', (req, res) => {
     res.send('Welcome to the CRM API!');
 });
+
+app.get('/api/inactiveCustomers', customerController.getInactiveCustomers);
 
 // Test and sync database connection
 sequelize.authenticate()
